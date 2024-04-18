@@ -4,12 +4,16 @@ import Product2 from "../../../assets/product1.png";
 import Product3 from "../../../assets/GROUNDNUT.png";
 
 const OilTypeContainer = styled.div`
-	width: 80%;
+	width: 70%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+
+	@media (max-width: 768px) {
+		width: 90%
+	}
 `;
 const OilTypeTile = styled.div`
 	display: flex;
@@ -22,8 +26,12 @@ const OilTypeTile = styled.div`
 	background: #f0efeb;
 	padding: 30px 20px;
 	color: #000000;
-	gap:20px;
+	gap: 20px;
 	border-radius: 15px;
+
+	@media (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const ProductContainer = styled.div`
@@ -107,18 +115,17 @@ const OilTypeCard: React.FC<OilType> = ({ image, heading, content, color }) => {
 
 export const OilTypes = () => {
 	return (
-		<div style={{display:"flex",justifyContent:"center"}}>
+		<div style={{ display: "flex", justifyContent: "center" }}>
 			<OilTypeContainer>
-			{oilTypesArray.map((OilType: OilType) => (
-				<OilTypeCard
-					content={OilType.content}
-					heading={OilType.heading}
-					image={OilType.image}
-					color={OilType.color}
-				/>
-			))}
-		</OilTypeContainer>
+				{oilTypesArray.map((OilType: OilType) => (
+					<OilTypeCard
+						content={OilType.content}
+						heading={OilType.heading}
+						image={OilType.image}
+						color={OilType.color}
+					/>
+				))}
+			</OilTypeContainer>
 		</div>
-		
 	);
 };

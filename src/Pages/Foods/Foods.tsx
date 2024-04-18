@@ -8,6 +8,8 @@ import soy1 from "../../assets/soya-1.png";
 import soy2 from "../../assets/soya-2.png";
 import soy3 from "../../assets/soya-3.png";
 import soy4 from "../../assets/soya-4.png";
+import Layer1 from "../../assets/Layer1.png";
+import Layer2 from "../../assets/Layer2.png";
 
 export const ProductImage = styled.img`
 	position: absolute;
@@ -52,10 +54,13 @@ export const SideImageContainer = styled.div`
 // Styled component for the text overlay
 const TextOverlay = styled.div`
 	position: absolute;
+	display:flex;
+	flex-direction: column;
+	gap : -10px;
 	width: 70%;
 	top: 50%; /* Position at the vertical center */
 	left: 50%; /* Position at the horizontal center */
-	transform: translate(-50%, -50%) rotate(-20deg); /* Center the text */
+	transform: translate(-50%, -50%) rotate(-5deg); /* Center the text */
 	text-align: center;
 	color: white;
 	transform-origin: center;
@@ -65,10 +70,11 @@ const TextOverlay = styled.div`
 const Title = styled.h1`
 	-webkit-text-stroke: 5px white;
 	-webkit-text-fill-color: transparent;
-	font-size: 6rem; /* Increase font size */
+	font-size: 8rem; /* Increase font size */
 	margin-bottom: 0.5rem; /* Reduce margin bottom */
 	font-weight: bold; /* Make the text bold */
 	letter-spacing: 2px; /* Add letter spacing */
+	font-family: "Lilita", "Times New Roman";
 
 	@media (max-width: 756px) {
 		font-size: 2rem;
@@ -76,16 +82,37 @@ const Title = styled.h1`
 	}
 `;
 
+const BlankArea = styled.div`
+	height:800px;
+	width:100%;
+`
+
 export const Foods = () => {
 	const foodContent =
 		"Under our Healthfit brand, we are now foraying into other products such as soy chunks. Assuring you of best quality and nutrition, Soy chunks can be mixed with anything as an extender or they can be cooked as a standalone dish. Available in two different variants, they are available as Healthfit Soya chunks and Healthfit Mini Soya Chunks.";
 
 	const flavourContent = "Soyabean, green and brown pulses like moong, arhar and others are rich in proteins. They are the most easily available source of nutrition for millions of people in the country. Our offerings in this category are sourced responsibly and packaged to ensure that our customers get the best out of them"
 	const thoughts = [
-		"Supply chain transparency",
-		"Water & waste reduction",
-		"Fortune's world's most admired companies",
-		"Ethisphere's world's most ethical companies",
+		{
+			color: "#1178ba",
+			image: Layer1,
+			alt: "Fortune's icon",
+			text: "Supply chain transparency"},
+		{
+			color: "#278acb",
+			image: Layer1,
+			alt: "Fortune's icon",
+			text: "Water & waste reduction"},
+		{
+			color: "#f4990a",
+			image: Layer2,
+			alt: "Fortune's icon",
+			text: "Fortune's world's most admired companies"},
+		{
+			color: "#c88f0c",
+			image: Layer2,
+			alt: "Fortune's icon",
+			text: "Ethisphere's world's most ethical companies"},
 	];
 	return (
 		<>
@@ -93,7 +120,8 @@ export const Foods = () => {
 				<Hero image={SoyaChunkImage}>
 					<>
 						<TextOverlay>
-							<Title>Power packed with nutrition</Title>
+							<Title>Power packed</Title>
+							<Title> with nutrition</Title>
 						</TextOverlay>
 						<ImageContainer>
 							<ProductImage
@@ -115,9 +143,10 @@ export const Foods = () => {
 				</SideImageContainer>
 				<ContentShow heading="Foods" content={foodContent} />
 				<ContentShow
-					heading="Protein-rich, flabourful"
+					heading="Protein-rich, flavourful"
 					content={flavourContent}
 				/>
+				<BlankArea/>
 				<Contact thoughts={thoughts}></Contact>
 			</Container>
 		</>

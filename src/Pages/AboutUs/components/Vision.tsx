@@ -10,8 +10,8 @@ const VisionContainer = styled.div`
 `;
 const VisionTile = styled.div`
 	display: flex;
-	width: 350px;
-	max-width: 400px;
+	width: calc(100% / 3);
+	// max-width: 400px;
 	height: 250px;
 	flex-direction: column;
 	justify-content: start;

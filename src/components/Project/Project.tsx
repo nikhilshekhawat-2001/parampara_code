@@ -14,32 +14,30 @@ const SectionContainer = styled.div`
 // Styled component for the product container
 const ProductContainer = styled.div`
 	display: flex;
-	flex-wrap: wrap; /* Allow cards to wrap to the next line */
 	justify-content: center;
 	width: 100%;
-  gap:10px;
-	max-width: 1200px;
+  gap: 20px;
 	padding: 20px; /* Added padding */
-	margin: 0 auto; /* Center the container */
 
+	@media (max-width: 756px) {
+		flex-wrap: wrap;
+	}
 `;
 
 // Styled component for the product card
 const ProductCard = styled.div`
-	width: calc(50% - 60px); /* Adjusted width to accommodate spacing */
+	width: 50%; /* Adjusted width to accommodate spacing */
 	display: flex;
-	min-width: 500px;
   align-items: center;
 	background-color: #f9f9f9; /* Base color of the cards */
-	padding: 20px;
+	padding: 70px 50px 50px 50px;
 	margin-bottom: 20px; /* Added margin between cards */
-	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
 
 	@media (max-width: 500px) {
 		flex-direction: column;
-    min-width: 100%;
+    width: 100%;
 	}
 `;
 
@@ -94,34 +92,64 @@ const ProductBanner = styled.div`
   margin-bottom: 20px;
 `;
 
+const Heading = styled.div`
+	padding: 15px 60px;
+	font-size: 2rem;
+	font-weight: bold;
+	width: fit-content;
+	left: 50%;
+	transform: translate(-50%);
+	border-radius: 10px;
+	color: white;
+	top: 15px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	background-color: #5ea24a;
+
+	@media (max-width: 756px) {
+		position: relative;
+		transform: translate(-50%);
+	}
+`;
+
 export function Project() {
   return (
-    <SectionContainer>
-      <ProductContainer>
-        <ProductCard>
-          <ProductImage src={Product1} alt="Parampara Kachhi Ghani Mustard Oil" />
-          <ProductContent>
-            <ProductTitle>Parampara Kachhi Ghani Mustard Oil</ProductTitle>
-            <ProductDescription>
-              Parampara Kachhi Ghani Mustard Oil contains Omega 3 PUFA that contributes towards maintaining normal blood
-              cholesterol levels. All our oils are fortified with Vitamins A & D, further ensuring that food cooked not
-              only tastes great, but is nutritious too.
-            </ProductDescription>
-            <LearnMoreButton>LEARN MORE</LearnMoreButton>
-          </ProductContent>
-        </ProductCard>
-        <ProductCard>
-          <ProductImage src={Product2} alt="Parampara Refined Soybean Oil" />
-          <ProductContent>
-            <ProductTitle>Parampara Refined Soybean Oil</ProductTitle>
-            <ProductDescription>
-              Parampara Refined Soybean Oil contains Omega 6 PUFA & Omega 3 PUFA in a proportion that help in
-              maintaining normal blood cholesterol levels, besides tocopherols which are natural antioxidants.
-            </ProductDescription>
-            <LearnMoreButton>LEARN MORE</LearnMoreButton>
-          </ProductContent>
-        </ProductCard>
-      </ProductContainer>
-    </SectionContainer>
-  );
+		<div style={{position:"relative"}}>
+			<Heading>Two Good</Heading>
+			<SectionContainer>
+				<ProductContainer>
+					<ProductCard>
+						<ProductImage
+							src={Product1}
+							alt="Parampara Kachhi Ghani Mustard Oil"
+						/>
+						<ProductContent>
+							<ProductTitle>Parampara Kachhi Ghani Mustard Oil</ProductTitle>
+							<ProductDescription>
+								Parampara Kachhi Ghani Mustard Oil contains Omega 3 PUFA that
+								contributes towards maintaining normal blood cholesterol levels.
+								All our oils are fortified with Vitamins A & D, further ensuring
+								that food cooked not only tastes great, but is nutritious too.
+							</ProductDescription>
+							<LearnMoreButton>LEARN MORE</LearnMoreButton>
+						</ProductContent>
+					</ProductCard>
+					<ProductCard>
+						<ProductImage src={Product2} alt="Parampara Refined Soybean Oil" />
+						<ProductContent>
+							<ProductTitle>Parampara Refined Soybean Oil</ProductTitle>
+							<ProductDescription>
+								Parampara Refined Soybean Oil contains Omega 6 PUFA & Omega 3
+								PUFA in a proportion that help in maintaining normal blood
+								cholesterol levels, besides tocopherols which are natural
+								antioxidants.
+							</ProductDescription>
+							<LearnMoreButton>LEARN MORE</LearnMoreButton>
+						</ProductContent>
+					</ProductCard>
+				</ProductContainer>
+			</SectionContainer>
+		</div>
+	);
 };

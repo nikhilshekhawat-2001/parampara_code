@@ -25,6 +25,10 @@ const Recipes = styled.div`
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: center;
+	width: 50%;
+	@media (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const Heading = styled.h1`
@@ -114,7 +118,8 @@ export const RecipesPDF = () => {
 	return (
 		<RecipeContainer>
 			<Heading>
-				Apni favourite dishes ko do ek naya andaaz, parampara oils ke saath
+				<div>Apni favourite dishes ko do ek naya andaaz,</div>{" "}
+				<div>parampara oils ke saath</div>
 			</Heading>
 			<Recipes>
 				{recipes.map((recipe) => (

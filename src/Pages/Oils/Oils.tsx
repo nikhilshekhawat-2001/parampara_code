@@ -10,6 +10,8 @@ import onion from "../../assets/onion.png";
 import styled from "styled-components";
 import Product1 from "../../assets/product1.png";
 import Product2 from "../../assets/product2.png";
+import Layer1 from "../../assets/Layer1.png";
+import Layer2 from "../../assets/Layer2.png";
 
 export const ProductImage = styled.img`
 	position: absolute;
@@ -50,10 +52,26 @@ export const Oils = () => {
 	const oilContentData =
 		"Parampara oils are a premium everyday cooking medium that are representive of our'Farm to table' philosophy, particularly the Mustard oil where our high yield seeds are used by farmers for a bumper crop. While this ensures profits for them, it also guarantees a certain pureness of the finished product for our customers, Extremely versatile, all Parampara oils can be used every day for medium to high temperature cooking, frying, sauteing, and much more.";
 	const thoughts = [
-		"Supply chain transparency",
-		"Water & waste reduction",
-		"Fortune's world's most admired companies",
-		"Ethisphere's world's most ethical companies",
+		{
+			color: "#1178ba",
+			image: Layer1,
+			alt: "Fortune's icon",
+			text: "Supply chain transparency"},
+		{
+			color: "#278acb",
+			image: Layer1,
+			alt: "Fortune's icon",
+			text: "Water & waste reduction"},
+		{
+			color: "#f4990a",
+			image: Layer2,
+			alt: "Fortune's icon",
+			text: "Fortune's world's most admired companies"},
+		{
+			color: "#c88f0c",
+			image: Layer2,
+			alt: "Fortune's icon",
+			text: "Ethisphere's world's most ethical companies"},
 	];
 	return (
 		<>

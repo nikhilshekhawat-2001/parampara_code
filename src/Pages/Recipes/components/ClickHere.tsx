@@ -3,9 +3,9 @@ import styled from "styled-components";
 // Styled component for the text overlay
 const TextOverlay = styled.div`
 	position: absolute;
-	bottom: 5%; /* Position at the vertical center */
+	bottom: -8%; /* Position at the vertical center */
 	left: 50%; /* Position at the horizontal center */
-	transform: translate(-50%, -50%) rotate(-10deg); /* Center the text */
+	transform: translate(-50%, -50%) rotate(-5deg); /* Center the text */
 	text-align: center;
 	color: white;
 	transform-origin: center;
@@ -74,7 +74,8 @@ export const ClickHere = () => {
 			<Desc>
 				<Line />
 				<DescText>
-					our receipe e-book to try out a variety of lip smacking receipes
+					<div>our receipe e-book to try out</div>
+					<div> a variety of lip smacking receipes</div>
 				</DescText>
 				<Line />
 			</Desc>

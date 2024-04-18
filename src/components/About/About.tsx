@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 import aboutImage from '../../assets/about.png';
-import { ContentShow } from "../ContentShow";
+import { ContentShow } from '../Main/ContentShow';
 
 const AboutSection = styled.section`
 	display: flex;
 	flex-direction: column;
-	max-width: 1200px;
-	margin: auto;
 	overflow: hidden;
-	padding: 50px 20px;
+	padding: 50px 0px;
 	color: white;
 	font-family: Arial, sans-serif;
 `;
@@ -20,8 +18,9 @@ const Content = styled.div`
 	align-items: center;
 	background-color: #ffa500;
 	justify-content: flex-end;
-	border-radius: 500px 20px 20px 500px;
+	border-radius: 500px 0px 0px 500px;
 	margin-right: 0px;
+	gap: 10px;
 	@media (max-width: 756px) {
 		flex-direction: column;
 		border-radius: 500px 500px 20px 20px;
@@ -30,9 +29,15 @@ const Content = styled.div`
 `;
 
 const Text = styled.div`
-	max-width: 500px;
+	max-width: 650px;
 	min-width: none;
-	padding: 10px;
+	padding: 10px 50px;
+
+	@media (max-width: 756px) {
+		max-width: 500px;
+		min-width: none;
+		padding: 10px ;
+	}
 `;
 
 const Heading = styled.h2`
@@ -63,9 +68,11 @@ const LearnMoreButton = styled.a`
 	padding: 10px 20px;
 	margin-top: 20px;
 	background-color: white;
+	border-radius: 10px;
 	color: #daa520; /* Gold color */
 	text-decoration: none;
 	transition: background-color 0.3s;
+	font-weight: bold;
 
 	&:hover {
 		background-color: #f1c40f;
@@ -78,7 +85,6 @@ export function About() {
 	return (
 		<AboutSection id="about">
 			<ContentShow
-				heading="A fusion of taste and tradition"
 				content={headingContent}
 			/>
 			<Content>
@@ -95,7 +101,7 @@ export function About() {
 						in which it is prepared, an oil that is made for the home
 						masterchefs - Parampara.
 					</Paragraph>
-					<LearnMoreButton href="#learn-more">Learn More</LearnMoreButton>
+					<LearnMoreButton href="#learn-more">LEARN MORE</LearnMoreButton>
 				</Text>
 			</Content>
 		</AboutSection>

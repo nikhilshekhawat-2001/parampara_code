@@ -16,7 +16,10 @@ const HeaderContainer = styled.header`
 `;
 
 const Logo = styled.img`
-	height: 50px;
+	height: 120px;
+	@media (max-width: 768px) {
+		height: 50px;
+	}
 `;
 
 const Nav = styled.nav`
@@ -37,6 +40,7 @@ const NavList = styled.ul<NavListProps>`
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	gap: 30px;
 
 	@media (max-width: 768px) {
 		flex-direction: column;
@@ -50,6 +54,7 @@ const NavList = styled.ul<NavListProps>`
 		border-top: none;
 		border-radius: 0; // Resets border-radius for mobile view
 		z-index: 2000;
+		gap: 0px;
 
 		display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 	}
@@ -57,6 +62,8 @@ const NavList = styled.ul<NavListProps>`
 
 const NavItem = styled.li`
 	padding: 10px 15px;
+	font-size: 20px;
+	font-weight: bold;
 
 	@media (max-width: 768px) {
 		padding: 15px;

@@ -12,12 +12,22 @@ const SectionContainer = styled.section`
 const TextContainer = styled.div`
 	max-width: 800px;
 	margin: 0 auto;
+	transform: rotate(-5deg);
 `;
 
 const Heading = styled.h2`
-	font-size: 2.5rem;
+	font-size: 5rem;
 	font-weight: bold;
+	font-family: "Lobster", sans-serif;
+	-webkit-text-stroke: 3px white;
+	text-wrap: nowrap;
+	-webkit-text-fill-color: transparent;
 	margin-bottom: 20px;
+
+	@media (max-width: 756px) {
+		font-size: 2rem;
+		-webkit-text-stroke: 1px white;
+	}
 `;
 
 const Subheading = styled.p`
@@ -38,7 +48,10 @@ export const Banner: React.FC<BannerProps> = ({ image, text }) => {
 			}}>
 			{text && (
 				<TextContainer>
-					<Heading>{text}</Heading>
+					<Heading>
+						<div>Aaiye swad ki parampara</div>
+						<span>ko banaye rakhen</span>
+					</Heading>
 				</TextContainer>
 			)}
 		</SectionContainer>
