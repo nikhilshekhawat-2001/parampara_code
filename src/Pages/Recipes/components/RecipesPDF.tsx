@@ -25,7 +25,7 @@ const Recipes = styled.div`
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: center;
-	width: 50%;
+	width: 60%;
 	@media (max-width: 768px) {
 		width: 100%;
 	}
